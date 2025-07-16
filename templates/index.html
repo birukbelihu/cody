@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cody - Your Online Coding Companion</title>
+  <link rel="icon" type="image/x-icon" href="images/cody.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.23.4/ace.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans transition-colors duration-300" id="body">
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="images/cody.png" alt="Cody Logo" class="w-10 h-10 rounded-full">
+        <h1 class="text-4xl font-bold text-blue-600">Cody</h1>
+      </div>
+      <button onclick="toggleTheme()" class="bg-gray-800 text-white px-4 py-1 rounded hover:bg-gray-700">Toggle Theme</button>
+    </div>
+    <p class="text-lg mb-6 mt-2">An online code runner API built with Flask + Docker.</p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-2">🎯 Live Code Editor</h2>
+    <div class="flex items-center mb-2 space-x-4">
+      <label for="language" class="text-sm">Language:</label>
+      <select id="language" onchange="changeLang(this.value)"
+        class="px-2 py-1 border rounded text-sm bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:outline-none">
+        <option value="python" class="text-blue-600">Python</option>
+        <option value="javascript" class="text-yellow-600">JavaScript</option>
+      </select>
+
+      <button onclick="copyCode()" class="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500">Copy Code</button>
+    </div>
+    <div id="editor" class="w-full h-64 rounded shadow border border-gray-300 mb-4 text-sm"></div>
+
+    <button onclick="runCode()" class="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500">Run Code</button>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-2">📡 Sample Request (cURL)</h2>
+    <pre class="bg-gray-900 text-yellow-300 p-4 rounded overflow-x-auto text-sm">
+curl -X POST http://localhost:5000/api/v1/cody \
+  -H "Content-Type: application/json" \
+  -d '{"language": "python", "code": "print(\"Hello, Cody!\")"}'
+    </pre>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-2">✅ Supported Languages</h2>
+    <ul class="list-disc ml-6 text-gray-700">
+      <li style="color: dodgerblue">Python</li>
+      <li style="color: dodgerblue">JavaScript (Node.js)</li>
+    </ul>
+
+    <footer class="text-sm text-center mt-10 text-gray-500">
+      © 2025 Cody — Made with ❤️ by <a href="https://github.com/birukbelihu" target="_blank">𝔹𝕚𝕣𝕦𝕜</a>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body></html>
