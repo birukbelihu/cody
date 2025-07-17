@@ -136,13 +136,19 @@ Cody/
 │   ├── code_runner.py
 │   └── language_config.py
 ├── images/
-│   ├── python/Dockerfile
-│   └── javascript/Dockerfile
-├── build_images.sh
-├── build_images.bat
+│   ├── javascript/Dockerfile
+│   └── python/Dockerfile
+├── scripts/
+│   ├── build_images.bat
+│   └── build_images.sh
+├── templates/
+│   ├── images/cody.png
+│   └── index.html
+│   └── index.js
+├── LICENSE
 ├── main.py
+├── README.md
 ├── requirements.txt
-└── README.md
 ```
 
 ---
