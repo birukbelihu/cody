@@ -11,7 +11,7 @@
 
 ## 🚀 Features
 
-- 🔒 Sandbox execution with Docker
+- 🔒 Sandboxed execution with Docker
 - ✅ Supports Python and JavaScript(Probably more languages support soon)
 - 🌐 REST API built using Flask
 - 🐳 Per-language isolated Docker images
