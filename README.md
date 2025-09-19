@@ -104,10 +104,7 @@ pip install -r requirements.txt
 > docker stats
 > ```
 >
-> If it's running, you will see the list of running containers.
-
-> [!WARNING]
-> If Docker is **not running**, you’ll see an error like this:
+> If it's running, you will see the list of running containers. otherwise you’ll see an error like this:
 >
 > ```
 > error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.50/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
