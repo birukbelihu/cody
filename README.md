@@ -95,7 +95,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
----
+## 🐳 Build Language Docker Images
 
 > [!NOTE]
 > Before building docker images make sure Docker instance is running by typing this command:
@@ -110,9 +110,7 @@ pip install -r requirements.txt
 > error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.50/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
 > ```
 
-## 🐳 Build Language Docker Images
-
-Before running Cody, build the Docker images:
+build the Docker images
 
 ```bash
 # On Windows CMD
