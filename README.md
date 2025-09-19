@@ -150,6 +150,9 @@ curl -X POST http://localhost:5000/api/v1/cody \
   -d '{"language": "javascript", "code": "console.log(\"Hello, Cody!\")"}'
 ```
 
+> [!TIP]
+There is also a simple Web Application located inside [`templates`](https://github.com/birukbelihu/Cody/tree/main/templates) folder. check it out
+
 ---
 
 ## 📂 Project Structure
