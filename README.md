@@ -98,7 +98,7 @@ pip install -r requirements.txt
 ---
 
 > [!NOTE]
-> Before running Cody make sure Docker instance is running by typing this command:
+> Before building docker images make sure Docker instance is running by typing this command:
 >
 > ```bash
 > docker stats
