@@ -5,7 +5,7 @@
 
 # 🧠 Cody - Online Code Compiler API
 
-**Cody** is a lightweight, Docker-based online code compiler backend built with **Flask**. It safely executes code (Python & JavaScript For now) inside isolated docker containers and returns output or errors via a simple HTTP API.
+**Cody** is a lightweight, Docker-based online code compiler backend built with [**Flask**](https://flask.palletsprojects.com/). It safely executes code (Python & JavaScript For now) inside isolated docker containers and returns output or errors via a simple HTTP API.
 
 ---
 
@@ -24,8 +24,22 @@
 Make sure you have the following installed:
 
 - [Git](https://git-scm.com/)
+
+```bash
+git --version
+```
+
 - [Python](https://www.python.org/)
-- [Docker](https://www.docker.com/)
+
+```bash
+python --version
+```
+
+- [Docker(Only If you want to run the server in docker container)](https://www.docker.com/)
+
+```bash
+docker --version
+```
 
 ---
 
@@ -36,7 +50,6 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/BirukBelihu/Cody.git
 ```
-
 
 ### Go inside the project
 
@@ -83,6 +96,22 @@ pip install -r requirements.txt
 ```
 
 ---
+
+> [!NOTE]
+> Before running Cody make sure Docker instance is running by typing this command:
+>
+> ```bash
+> docker stats
+> ```
+>
+> If it's running, you will see the list of running containers.
+
+> [!WARNING]
+> If Docker is **not running**, you’ll see an error like this:
+>
+> ```
+> error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.50/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+> ```
 
 ## 🐳 Build Language Docker Images
 
