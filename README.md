@@ -95,6 +95,12 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
+### Go inside the scripts directory
+
+```bash
+cd scripts
+```
+
 ## 🐳 Build Language Docker Images
 
 > [!NOTE]
@@ -120,6 +126,12 @@ build_images.bat
 ```bash
 # On WSL/Linux/macOS
 ./build_images.sh
+```
+
+### Go back to the project root folder
+
+```bash
+cd ..
 ```
 
 ---
