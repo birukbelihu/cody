@@ -1,5 +1,6 @@
 import os
 import uuid
+import shutil
 import docker
 import tempfile
 from app.language_config import LANGUAGE_CONFIG
@@ -16,10 +17,10 @@ def run_code(language, code):
     docker_image = config["docker_image"]
     run_cmd = config["run_cmd"]
 
-    temp_dir = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-    os.makedirs(temp_dir, exist_ok=True)
+    temporary_directory = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+    os.makedirs(temporary_directory, exist_ok=True)
 
-    code_path = os.path.join(temp_dir, file_name)
+    code_path = os.path.join(temporary_directory, file_name)
 
     with open(code_path, 'w') as file:
         file.write(code)
@@ -28,7 +29,7 @@ def run_code(language, code):
         container = docker_client.containers.run(
             image=docker_image,
             command=run_cmd,
-            volumes={temp_dir: {"bind": "/app", "mode": "ro"}},
+            volumes={temporary_directory: {"bind": "/app", "mode": "ro"}},
             working_dir="/app",
             stderr=True,
             stdout=True,
@@ -36,18 +37,19 @@ def run_code(language, code):
             detach=True,
             mem_limit="100m",
             pids_limit=50,
-            auto_remove=False
+            auto_remove=True
         )
 
-        exit_status = container.wait()
-        logs = container.logs(stdout=True, stderr=True).decode().strip()
-
-        container.remove()
+        exit_status = container.wait(timeout=5)
+        logs = container.logs(stdout=True, stderr=True).decode(errors="ignore").strip()
 
         if exit_status["StatusCode"] == 0:
-            return {"output": logs}
+            output = {"output": logs}
         else:
-            return {"error": logs}
+            output = {"error": logs}
 
     except Exception as e:
-        return {"error": str(e)}
+        output = {"error": str(e)}
+    finally:
+        shutil.rmtree(temporary_directory, ignore_errors=True)
+    return output
