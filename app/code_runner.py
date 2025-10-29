@@ -1,6 +1,5 @@
 import os
 import uuid
-import shutil
 import docker
 import tempfile
 from app.language_config import LANGUAGE_CONFIG
@@ -44,12 +43,9 @@ def run_code(language, code):
         logs = container.logs(stdout=True, stderr=True).decode(errors="ignore").strip()
 
         if exit_status["StatusCode"] == 0:
-            output = {"output": logs}
+            return {"output": logs}
         else:
-            output = {"error": logs}
+            return {"error": logs}
 
     except Exception as e:
-        output = {"error": str(e)}
-    finally:
-        shutil.rmtree(temporary_directory, ignore_errors=True)
-    return output
+        return {"error": str(e)}
