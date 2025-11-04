@@ -21,7 +21,7 @@
 
 ---
 
-## 🛠️ Prerequisites
+## 🔧 Getting Started
 
 Make sure you have the following installed:
 
@@ -44,8 +44,6 @@ docker --version
 ```
 
 ---
-
-## 🔧 Getting Started
 
 ### Clone the repository
 
