@@ -37,7 +37,7 @@ git --version
 python --version
 ```
 
-- [Docker(Only If you want to run the server in docker container)](https://www.docker.com/)
+- [Docker](https://www.docker.com/)
 
 ```bash
 docker --version
