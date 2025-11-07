@@ -5,14 +5,15 @@
 
 # 🧠 Cody - Online Code Compiler API
 
-**Cody** is a lightweight, Docker-based online code compiler backend built with [Flask](https://flask.palletsprojects.com/). It safely executes code (Python & JavaScript For now) inside isolated docker containers and returns output or errors via a simple HTTP API.
+**Cody** is a lightweight, Docker-based online code compiler backend built with [Flask](https://flask.palletsprojects.com/). It safely executes code inside isolated docker containers and returns output or errors via a simple HTTP API.
 
 ---
 
 ## 🚀 Features
 
 - 🔒 Sandboxed execution with Docker
-- ✅ Supported Languages 
+- ✅ Supported Languages
+    * Java
     * Python
     * JavaScript
 - 🌐 REST API built using Flask
@@ -164,7 +165,37 @@ curl -X POST http://localhost:5000/api/v1/cody \
   -d '{"language": "javascript", "code": "console.log(\"Hello, Cody!\")"}'
 ```
 
----
+## 👨‍💻 How to add a new language support
+
+Step1. Go inside [`images`](https://github.com/birukbelihu/cody/tree/main/images) folder & create a new folder with the language name(All in lowercase for consistency). example ruby
+
+Step2. Inside that folder create a docker file with your new language compiler or interpreter, working directory, running steps & other necessary definitions like this one.
+
+```dockerfile
+FROM ruby:3.3
+
+WORKDIR /app
+
+CMD ["ruby", "main.rb"]
+```
+
+Step3. Build the docker image with this command.
+
+```bash
+docker build -t cody_ruby ..\images\ruby
+```
+
+Step4. Add it to the language config like this.
+
+```
+"ruby": {
+  "docker_image": "cody_ruby",
+  "file_name": "main.rb",
+  "run_cmd": ["ruby", "main.rb"]
+},
+```
+
+Step4. You're done
 
 ## 📄 License
 

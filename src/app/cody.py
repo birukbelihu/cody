@@ -28,7 +28,7 @@ def run_code(language, code):
         container = docker_client.containers.run(
             image=docker_image,
             command=run_cmd,
-            volumes={temporary_directory: {"bind": "/app", "mode": "ro"}},
+            volumes={temporary_directory: {"bind": "/app"}},
             working_dir="/app",
             stderr=True,
             stdout=True,

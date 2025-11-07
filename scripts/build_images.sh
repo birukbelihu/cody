@@ -2,6 +2,11 @@
 
 echo "🚀 Building Docker images for Cody..."
 
+docker build -t cody_java ../images/java || {
+  echo "❌ Failed to build Java(OpenJDK) Docker image.";
+  exit 1;
+}
+
 docker build -t cody_python ../images/python || {
   echo "❌ Failed to build Python docker image.";
   exit 1;
