@@ -146,7 +146,9 @@ Visit: `http://localhost:5000/api/v1/cody`
 
 ---
 
-## 🧪 Example Usage(Python)
+## 🧪 Example Usage
+
+### Python
 
 ```bash
 curl -X POST http://localhost:5000/api/v1/cody \
@@ -154,7 +156,7 @@ curl -X POST http://localhost:5000/api/v1/cody \
   -d '{"language": "python", "code": "print(\"Hello, Cody!\")"}'
 ```
 
-## 🧪 Example Usage(JavaScript)
+### JavaScript
 
 ```bash
 curl -X POST http://localhost:5000/api/v1/cody \
