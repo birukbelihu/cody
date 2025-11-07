@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from app.code_runner import run_code
+from app.cody import run_code
 
 app = Flask(__name__)
 

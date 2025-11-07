@@ -2,7 +2,7 @@ import os
 import uuid
 import docker
 import tempfile
-from app.language_config import LANGUAGE_CONFIG
+from .language_config import LANGUAGE_CONFIG
 
 docker_client = docker.from_env()
 

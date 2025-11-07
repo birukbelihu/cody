@@ -2,14 +2,16 @@
 echo 🚀 Building Docker images for Cody...
 
 docker build -t code_runner_python ..\images\python
+
 if errorlevel 1 (
-    echo ❌ Failed to build Python image
+    echo ❌ Failed to build Python Docker image
     exit /b 1
 )
 
 docker build -t code_runner_javascript ..\images\javascript
+
 if errorlevel 1 (
-    echo ❌ Failed to build JavaScript(Node.js) image
+    echo ❌ Failed to build JavaScript(Node.js) Docker image
     exit /b 1
 )
 
