@@ -5,14 +5,14 @@
 
 # 🧠 Cody - Online Code Compiler API
 
-**Cody** is a lightweight, Docker-based online code compiler backend built with [**Flask**](https://flask.palletsprojects.com/). It safely executes code (Python & JavaScript For now) inside isolated docker containers and returns output or errors via a simple HTTP API.
+**Cody** is a lightweight, Docker-based online code compiler backend built with [Flask](https://flask.palletsprojects.com/). It safely executes code (Python & JavaScript For now) inside isolated docker containers and returns output or errors via a simple HTTP API.
 
 ---
 
 ## 🚀 Features
 
 - 🔒 Sandboxed execution with Docker
-- ✅ Supported Languages  
+- ✅ Supported Languages 
     * Python
     * JavaScript
 - 🌐 REST API built using Flask
@@ -48,13 +48,13 @@ docker --version
 ### Clone the repository
 
 ```bash
-git clone https://github.com/BirukBelihu/Cody.git
+git clone https://github.com/birukbelihu/cody.git
 ```
 
 ### Go inside the project
 
 ```bash
-cd Cody
+cd cody
 ```
 
 ### Set up Python virtual environment(I recommend using [uv](https://github.com/astral-sh/uv) for lightning speed)
@@ -62,7 +62,7 @@ cd Cody
 ### With uv
 
 ```bash
-uv venv .venv
+uv venv
 ```
 
 ### With Python
