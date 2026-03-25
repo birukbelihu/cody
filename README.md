@@ -3,26 +3,26 @@
 ![GitHub issues](https://img.shields.io/github/issues/BirukBelihu/Cody)
 ![GitHub license](https://img.shields.io/github/license/BirukBelihu/Cody)
 
-# 🧠 Cody - Online Code Compiler API
+# Cody - Online Code Compiler API
 
 **Cody** is a lightweight, Docker-based online code compiler backend built with [Flask](https://flask.palletsprojects.com/). It safely executes code inside isolated docker containers and returns output or errors via a simple HTTP API.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔒 Sandboxed execution with Docker
-- ✅ Supported Languages
+- Sandboxed execution with Docker
+- Supported Languages
     * Java
     * Python
     * JavaScript
-- 🌐 REST API built using Flask
-- 🐳 Per-language isolated Docker images
-- 💻 Easy to run locally
+- REST API built using Flask
+- Per-language isolated Docker images
+- Easy to run locally
 
 ---
 
-## 🔧 Getting Started
+## Getting Started
 
 Make sure you have the following installed:
 
@@ -102,7 +102,7 @@ pip install -r requirements.txt
 cd scripts
 ```
 
-## 🐳 Build Language Docker Images
+## Build Language Docker Images
 
 > [!NOTE]
 > Before building docker images make sure Docker instance is running by typing this command:
@@ -137,7 +137,7 @@ cd ..
 
 ---
 
-## ▶️ Start Cody
+## Start Cody
 
 ```bash
 python main.py
@@ -147,7 +147,7 @@ Visit: `http://localhost:5000/api/v1/cody`
 
 ---
 
-## 🧪 Example Usage
+## Example Usage
 
 ### Python
 
@@ -165,7 +165,7 @@ curl -X POST http://localhost:5000/api/v1/cody \
   -d '{"language": "javascript", "code": "console.log(\"Hello, Cody!\")"}'
 ```
 
-## 👨‍💻 How to add a new language support
+## How to add a new language support
 
 Step1. Go inside [`images`](https://github.com/birukbelihu/cody/tree/main/images) folder & create a new folder with the language name(All in lowercase for consistency). example ruby
 
@@ -197,6 +197,6 @@ Step4. Add it to the language config like this.
 
 Step4. You're done
 
-## 📄 License
+## License
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for full details.
