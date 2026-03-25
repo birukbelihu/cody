@@ -1,17 +1,17 @@
 @echo off
-echo 🚀 Building Docker images for Cody...
+echo Building Docker images for Cody...
 
 docker build -t cody_java ..\images\java
 
 if errorlevel 1 (
-    echo ❌ Failed to build Java(OpenJDK) Docker image
+    echo Failed to build Java(OpenJDK) Docker image
     exit /b 1
 )
 
 docker build -t cody_python ..\images\python
 
 if errorlevel 1 (
-    echo ❌ Failed to build Python Docker image
+    echo Failed to build Python Docker image
     exit /b 1
 
 )
@@ -19,9 +19,9 @@ if errorlevel 1 (
 docker build -t cody_javascript ..\images\javascript
 
 if errorlevel 1 (
-    echo ❌ Failed to build JavaScript(Node.js) Docker image
+    echo Failed to build JavaScript(Node.js) Docker image
     exit /b 1
 )
 
-echo ✅ All docker images built successfully!!!
+echo All docker images built successfully!!!
 pause
